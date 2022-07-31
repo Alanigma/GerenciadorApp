@@ -14,6 +14,7 @@ class _AddPageState extends State<AddPage> {
   @override
   Widget build(BuildContext context) {
     String novoNome = '';
+    String novoCategoria = '';
     String novoPreco = '';
     String novoEstoque = '';
 
@@ -37,6 +38,29 @@ class _AddPageState extends State<AddPage> {
                   child: TextField(
                     onChanged: (value) {
                       novoNome = value;
+                    },
+                    decoration: InputDecoration(
+                        enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.purple)),
+                        focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                          color: Colors.purpleAccent,
+                        ))))),
+            ],
+          ),
+          Row(
+            children: [
+              Expanded(
+                  flex: 1,
+                  child: Text(
+                    'Categoria',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  )),
+              Expanded(
+                  flex: 2,
+                  child: TextField(
+                    onChanged: (value) {
+                      novoCategoria = value;
                     },
                     decoration: InputDecoration(
                         enabledBorder: UnderlineInputBorder(
@@ -99,6 +123,7 @@ class _AddPageState extends State<AddPage> {
                     onPressed: (() {
                       produtos.add({
                         'nome': novoNome,
+                        'categoria': novoCategoria,
                         'preco': int.parse(novoPreco),
                         'estoque': int.parse(novoEstoque),
                       });
