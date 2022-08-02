@@ -49,18 +49,7 @@ class _CaixaPageState extends State<CaixaPage> {
       appBar: AppBar(
         title: Text('Gestão de Caixa'),
         backgroundColor: corPrincipal(),
-      ),
-      floatingActionButton: FloatingActionButton(
-        tooltip: 'Gráficos',
-        backgroundColor: corPrincipal(),
-        hoverColor: Colors.purpleAccent,
-        splashColor: corSecundaria(),
-        foregroundColor: corSecundaria(),
-        onPressed: () {
-          //Navigator.of(context).pushNamed('/add');
-        },
-        child: Icon(Icons.pie_chart),
-      ),
+      ),      
       body: Column(
         children: [
           Expanded(

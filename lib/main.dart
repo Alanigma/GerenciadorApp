@@ -12,10 +12,11 @@ class MyApp extends StatelessWidget {
       //Localizações para utilizar o DateTime
       localizationsDelegates: [
         GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
       ],
       //Setando localização para o Brasil
-      supportedLocales: [Locale("pt", "BR")],
+      supportedLocales: [Locale('pt', 'BR')],
       //Rota Inicial
       initialRoute: '/',
       //Rotas
