@@ -6,6 +6,9 @@ import 'package:flutter_application_1/Assets/cores.dart';
 import 'package:flutter_application_1/Assets/change_notifiers.dart';
 import 'gerenciador_page.dart';
 
+//Lista de transações
+List<Map> transacoes = [];
+
 class VendaPage extends StatefulWidget {
   const VendaPage({Key? key}) : super(key: key);
 
@@ -27,13 +30,11 @@ class _VendaPageState extends State<VendaPage> {
     ;
   }
 
-  //Lista de transações
-  List<Map> transacoes = [];
   //Informações dos produtos vendidos na venda atual
   List<String> nomesVendidos = [];
   List<String> categoriasVendidos = [];
   List<int> quantidadesVendidos = [];
-  List<int> precoVendidos = [];
+  List<double> precoVendidos = [];
 
   @override
   Widget build(BuildContext context) {

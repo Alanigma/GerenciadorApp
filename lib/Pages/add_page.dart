@@ -22,7 +22,7 @@ class _AddPageState extends State<AddPage> {
   String novoNome = '';
   String novoCategoria = '';
   double novoPreco = 0;
-  double novoEstoque = 0;  
+  int novoEstoque = 0;  
 
   @override
   void initState() {
@@ -154,10 +154,9 @@ class _AddPageState extends State<AddPage> {
                   child: TextField(
                       keyboardType: TextInputType.number,
                       onChanged: (value) {
-                        value = value.replaceAll(',', '.');
                         try {
                           //atualiza variavel com textField
-                          novoEstoque = double.parse(value);
+                          novoEstoque = int.parse(value);
                           //checa se o campo está vasio e avisa se o campo está válido
                           value != '' ? checkEstoque = true : checkEstoque = false;
                         } catch (erro) {

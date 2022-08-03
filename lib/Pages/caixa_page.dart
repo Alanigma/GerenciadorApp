@@ -47,9 +47,20 @@ class _CaixaPageState extends State<CaixaPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Gestão de Caixa'),
+        title: const Text('Gestão de Caixa'),
         backgroundColor: corPrincipal(),
-      ),      
+      ),
+      floatingActionButton: FloatingActionButton(
+        tooltip: 'Vendas',
+        backgroundColor: corPrincipal(),
+        hoverColor: Colors.purpleAccent,
+        splashColor: corSecundaria(),
+        foregroundColor: corSecundaria(),
+        onPressed: () {
+          Navigator.of(context).pushNamed('/transacoes');
+        },
+        child: Icon(Icons.pie_chart),
+      ),
       body: Column(
         children: [
           Expanded(

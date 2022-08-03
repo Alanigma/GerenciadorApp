@@ -28,7 +28,7 @@ class EditPageState extends State<EditPage> {
     String novoNome = produtos[i]['nome'];
     String novoCategoria = produtos[i]['categoria'];
     double novoPreco = produtos[i]['preco'];
-    double novoEstoque = produtos[i]['estoque'];
+    int novoEstoque = produtos[i]['estoque'];
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.purple,
@@ -151,10 +151,9 @@ class EditPageState extends State<EditPage> {
                       initialValue: produtos[i]['estoque'].toString(),
                       keyboardType: TextInputType.number,
                       onChanged: (value) {
-                        value = value.replaceAll(',', '.');
                         try {
                           //atualiza variavel com textField
-                          novoEstoque = double.parse(value);
+                          novoEstoque = int.parse(value);
                           //checa se o campo está vasio e avisa se o campo está válido
                           value != '' ? checkEstoque = true : checkEstoque = false;
                         } catch (erro) {
